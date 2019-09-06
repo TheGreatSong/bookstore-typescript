@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css'; // sementic-ui를 사용 시 이렇게 index에 css를 넣어줘야 함.
 // import './index.css';
 import Home from './pages/home';
 import * as serviceWorker from './serviceWorker';

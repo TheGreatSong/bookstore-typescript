@@ -2,6 +2,7 @@ import React, { memo, useState, useEffect, useCallback, Dispatch } from 'react';
 import { Button, Card, Divider } from 'semantic-ui-react';
 import { TCartState } from './cart';
 
+// 여기서 돈에 관련된 데이터들을 수정한다.
 export const initialFinance: number = 40000;
 
 export type TMoneyState = [number, Dispatch<number>];
