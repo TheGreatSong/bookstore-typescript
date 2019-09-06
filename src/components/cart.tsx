@@ -4,6 +4,7 @@ import { TBook } from './book';
 import RSwal from '../utils/reactSwal';
 import { TMoneyState } from './wallet';
 
+// TypeScript extend.
 export type TCartProduct = TBook & {
   number: number
 }

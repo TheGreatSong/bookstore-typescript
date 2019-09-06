@@ -4,6 +4,11 @@ import { TMoneyState } from './wallet';
 import { TCartProduct, TCartState } from './cart';
 import RSwal from '../utils/reactSwal';
 
+// 인터페이스는 클래스랑 문법이 좀 다름.
+interface IBookHelper extends TBook {
+  number : number
+}
+
 export type TBook = {
   title: string,
   price: number,
