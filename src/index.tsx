@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css'; // sementic-ui를 사용 시 이렇게 index에 css를 넣어줘야 함.
-// import './index.css';
-import Home from './pages/home';
+import 'semantic-ui-css/semantic.min.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
