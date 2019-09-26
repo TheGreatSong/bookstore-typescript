@@ -16,6 +16,7 @@ const bookList: TBook[] = BookData.map((obj, i) => ({
 }));
 
 export default memo(() => {
+  // bookContext에서 받는 부분?
   const moneyState = useState<number>(initialFinance);
   const cartState = useState<TCartProduct[]>([]);
   return (

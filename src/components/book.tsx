@@ -20,6 +20,7 @@ type TBookProps = TBook & {
   cartState: TCartState
 };
 
+// memo : hooks 관련 
 export default memo(({
   title,
   img,
