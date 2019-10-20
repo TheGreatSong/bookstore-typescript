@@ -1,11 +1,19 @@
-import { Header, Icon, Label, Segment } from 'semantic-ui-react'
-import React, { memo, useCallback, useEffect, useState } from 'react'
+import { Button, Header, Icon, Label, Segment } from 'semantic-ui-react'
+import React, { Dispatch, memo, useCallback, useEffect, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 
+import { Auth } from 'aws-amplify';
+import { TAuthState } from '../routes';
 import toWon from '../utils/formatCurrency'
 import { useStateValue } from '../contexts/bookReducer'
 
-export default memo(() => {
+type THeadPartProps = {
+  setSignIn: Dispatch<TAuthState>
+}
+
+// TODO: length에 number도 돌려서 계산해야함
+
+export default memo<THeadPartProps>(({ setSignIn }) => {
   const { push } = useHistory()
   const { pathname } = useLocation()
   const [isPathCart, setPath] = useState(false)
@@ -22,6 +30,13 @@ export default memo(() => {
       push('/cart')
     }
   }, [push, isPathCart])
+  const signOut = useCallback(() => {
+    Auth.signOut().then(() => {
+      setSignIn({ authState: 'signIn'})
+    }).catch((e: any) => {
+      console.log({ e })
+    })
+  }, [setSignIn])
   return (
     <Segment textAlign='center' raised>
       <Header as='h1'>React Book Store</Header>      
@@ -29,29 +44,38 @@ export default memo(() => {
         <Icon name='money' />
         <Label.Detail>{toWon(account)}</Label.Detail>
       </Label>
-      <Label
-        as={isPathCart ? 'span' : 'a'}
-        color={isPathCart ? undefined : 'teal'}
-        size='large'
-        image
-        attached='bottom right'
-        onClick={navigateToCart}
-      >
-        <Icon name='user circle' />
-        송조현
-        <Label.Detail>
+      <Button.Group floated='right'>
+        <Button
+          as="span"
+          color='teal'
+          compact
+        >
+          <Icon name='user circle' />
+          송조현
+        </Button>    
+        <Button
+          disabled={isPathCart}
+          onClick={navigateToCart}
+        >
           <Icon name='cart' />
           {!!cartLength && (
-            <Label
-              size="mini"
+            <Button
+              as="span"
+              size="tiny"
               circular
               color="red"
-              floating
+              compact
               content={cartLength}
             />
-          )}          
-        </Label.Detail>
-      </Label>
+          )}
+        </Button>          
+        <Button
+          negative
+          onClick={signOut}
+        >
+          <Icon name='sign-out' />
+        </Button>
+      </Button.Group> 
     </Segment>
   )
 })
