@@ -15,7 +15,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import toWon from '../utils/formatCurrency'
 import { useStateValue } from '../contexts/bookReducer'
 
-type TISBN = Pick<TBook, 'isbn'>
+type TISBN = Pick<TBook, 'isbn'> // typescript 문법 : 하나 뽑아서 별도의 타입을 하나 만든다.
 
 const BookDetail = memo<TISBN>(({ isbn }) => {
   const [, dispatch] = useStateValue()
@@ -82,7 +82,7 @@ const BookDetail = memo<TISBN>(({ isbn }) => {
 
 export default memo(() => {
     const { goBack } = useHistory()
-    const { isbn } = useParams()
+    const { isbn } = useParams() // props를 받아서 뽑는다. 이름 틀리면 undefind
     return (
       <Segment raised>
         <Grid centered padded>

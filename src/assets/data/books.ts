@@ -7,7 +7,7 @@ export type TBook = {
   title: string
   price: number
   img: string
-  author?: string
+  author?: string // undefind : 정의 안 된
   publisher?: string
   release?: string
   description?: string

@@ -7,7 +7,7 @@ import toWon from '../utils/formatCurrency'
 import { useStateValue } from '../contexts/bookReducer'
 
 export default memo(({ isbn, title, img, price }: TBook) => {
-  const [, dispatch] = useStateValue()
+  const [, dispatch] = useStateValue() // dispatch := setState
   return (
     <Card>
       <Link to={`/detail/${isbn}`}>

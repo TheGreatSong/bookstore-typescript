@@ -6,7 +6,7 @@ import toWon from '../utils/formatCurrency'
 import { useStateValue } from '../contexts/bookReducer'
 
 export default memo(() => {
-  const { push } = useHistory()
+  const { push } = useHistory() // 경로를 캐싱.
   const { pathname } = useLocation()
   const [isPathCart, setPath] = useState(false)
   const [{ account }] = useStateValue()
