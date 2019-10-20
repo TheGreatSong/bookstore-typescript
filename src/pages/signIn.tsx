@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { withOAuth } from 'aws-amplify-react';
 
+// withOAuth -> OAuthSignIn 
 export default withOAuth(({ OAuthSignIn, authState }: any) => {
   const { replace } = useHistory();
   useEffect(() => {

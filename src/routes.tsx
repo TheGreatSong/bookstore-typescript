@@ -7,7 +7,7 @@ import BookShelf from './pages/bookShelf'
 import Cart from './pages/cart'
 import { Container } from 'semantic-ui-react'
 import HeadPart from './components/headPart'
-import SignIn from './pages/signIn'
+import SignIn from './pages/signIn' // 로그인 컴포넌트
 
 export type TAuthState = {
   authState: string;
@@ -21,6 +21,7 @@ type TPrivateRouteProps = {
   [s: string]: any;
 }
 
+// history, location, match
 const PrivateRoute: FC<TPrivateRouteProps> = ({ component: Component, authState, ...rest }) => (
   <Route
     {...rest}
@@ -45,13 +46,16 @@ export default memo(() => {
     authData: null,
     authError: null
   });
+  // Hub : 리스너
   Hub.listen('auth', (data) => {
     switch(data.payload.event) {
       case 'signIn':
-        setSignIn({ authState: 'signedIn', authData: data.payload.data });
+        // prevState : 나머지값들을 대응시키기 위해서
+        // prevState를 안 쓰면 authError 같은 값이 날아감. 아예 없어짐.
+        setSignIn(prevState => ({ ...prevState, authState: 'signedIn', authData: data.payload.data }));
         break;
       case 'signIn_failure':
-        setSignIn({ authState: 'signIn', authData: null, authError: data.payload.data });
+        setSignIn(prevState => ({ ...prevState, authState: 'signIn', authData: null, authError: data.payload.data }));
         break;
       default:
         break;

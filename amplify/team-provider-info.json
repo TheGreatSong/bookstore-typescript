@@ -17,5 +17,24 @@
                 }
             }
         }
+    },
+    "local": {
+        "awscloudformation": {
+            "AuthRoleName": "bookstore-typescript-local-20191020174804-authRole",
+            "UnauthRoleArn": "arn:aws:iam::697798598260:role/bookstore-typescript-local-20191020174804-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::697798598260:role/bookstore-typescript-local-20191020174804-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "bookstore-typescript-local-20191020174804-deployment",
+            "UnauthRoleName": "bookstore-typescript-local-20191020174804-unauthRole",
+            "StackName": "bookstore-typescript-local-20191020174804",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:697798598260:stack/bookstore-typescript-local-20191020174804/54967f50-f316-11e9-a049-0a8876b4c718"
+        },
+        "categories": {
+            "auth": {
+                "bookstoretypescriptead48e39": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"994434426397-3oo45qiraj2224n5u2lbds32vrnm0cu9.apps.googleusercontent.com\",\"client_secret\":\"MWi-MoSpSghEiHNzPKKtUcpl\"}]"
+                }
+            }
+        }
     }
 }
