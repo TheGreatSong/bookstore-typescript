@@ -1,10 +1,10 @@
 {
-    "AppSyncApiName": "bookstore",
+    "AppSyncApiName": "bookstoreTypescript",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authbookstoretypescript59bbf1dc",
+            "authbookstoretypescript1ed0a2ea",
             "Outputs.UserPoolId"
         ]
     }

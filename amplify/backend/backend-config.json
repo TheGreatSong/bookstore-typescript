@@ -1,19 +1,14 @@
 {
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
-		}
-	},
 	"auth": {
-		"bookstoretypescript59bbf1dc": {
+		"bookstoretypescript1ed0a2ea": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": []
+			"dependsOn": [],
+			"customAuth": false
 		}
 	},
 	"api": {
-		"bookstore": {
+		"bookstoreTypescript": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -22,7 +17,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authbookstoretypescript59bbf1dc"
+							"userPoolId": "authbookstoretypescript1ed0a2ea"
 						}
 					}
 				}

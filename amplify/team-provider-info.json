@@ -1,19 +1,19 @@
 {
-    "dev": {
+    "bookstore": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-bookstore-typescript-dev-225124-authRole",
-            "UnauthRoleArn": "arn:aws:iam::210272005686:role/amplify-bookstore-typescript-dev-225124-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::210272005686:role/amplify-bookstore-typescript-dev-225124-authRole",
+            "AuthRoleName": "amplify-bookstore-typescript-bookstore-204930-authRole",
+            "UnauthRoleArn": "arn:aws:iam::697798598260:role/amplify-bookstore-typescript-bookstore-204930-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::697798598260:role/amplify-bookstore-typescript-bookstore-204930-authRole",
             "Region": "ap-northeast-2",
-            "DeploymentBucketName": "amplify-bookstore-typescript-dev-225124-deployment",
-            "UnauthRoleName": "amplify-bookstore-typescript-dev-225124-unauthRole",
-            "StackName": "amplify-bookstore-typescript-dev-225124",
-            "StackId": "arn:aws:cloudformation:ap-northeast-2:210272005686:stack/amplify-bookstore-typescript-dev-225124/13e1b0b0-5d56-11ea-af8a-0a9c82f11f34",
-            "AmplifyAppId": "d5swl0drnoxz6"
+            "DeploymentBucketName": "amplify-bookstore-typescript-bookstore-204930-deployment",
+            "UnauthRoleName": "amplify-bookstore-typescript-bookstore-204930-unauthRole",
+            "StackName": "amplify-bookstore-typescript-bookstore-204930",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:697798598260:stack/amplify-bookstore-typescript-bookstore-204930/96588090-5fa0-11ea-b6fc-06a94ca450e8",
+            "AmplifyAppId": "dr94hymhp64so"
         },
         "categories": {
             "auth": {
-                "bookstoretypescript59bbf1dc": {}
+                "bookstoretypescript1ed0a2ea": {}
             }
         }
     }
